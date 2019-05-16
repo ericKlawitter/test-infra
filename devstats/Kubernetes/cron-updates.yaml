@@ -13,11 +13,11 @@ spec:
           restartPolicy: OnFailure
           containers:
           - name: devstats-cron
-            image: gcr.io/devstats-gke/devstats:oldlatest
+            image: gcr.io/knative-tests/devstats:latest
             imagePullPolicy: Always
             workingDir: "/mount/data/src/test-infra/devstats"
             command: ["/bin/sh","-c"]
-            args: ["git pull origin master; ./devstats"]
+            args: ["rm -rf /etc/gha2db; ln -sf /mount/data/src/test-infra/devstats /etc/gha2db; git pull origin master; ./devstats"]
             envFrom:
             - configMapRef:
                 name: devstats-env

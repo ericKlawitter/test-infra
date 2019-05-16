@@ -10,9 +10,9 @@ spec:
   capacity:
     storage: 1000Gi
   nfs:
-    # This should be the name of the fileshare in cloud filestore
-    path: /devstats_knative
-    server: 10.54.105.58
+    # TODO This should be the name of the fileshare in cloud filestore
+    path:
+    server:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: nfs-storage
 ---

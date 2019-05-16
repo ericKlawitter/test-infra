@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: devstats-image
-        image: gcr.io/devstats-gke/devstats:latest
+        image: gcr.io/knative-tests/devstats:latest
         imagePullPolicy: Always
         command: ["tail", "-f", "/dev/null",]
         envFrom:
