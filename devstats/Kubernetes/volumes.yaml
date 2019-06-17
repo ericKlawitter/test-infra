@@ -23,7 +23,7 @@ spec:
   capacity:
     storage: 1000Gi
   nfs:
-    path: devstats_dep #TODO change this to devstats knative-tests 
+    path: /devstats_dep #TODO change this to devstats knative-tests 
     server: 172.26.65.170
   persistentVolumeReclaimPolicy: Retain
   storageClassName: nfs-storage
