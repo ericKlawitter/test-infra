@@ -24,5 +24,18 @@ cd /mount/data/src/
 git clone https://github.com/knative/test-infra.git
 cd test-infra/devstats
 ./scripts/copy_devstats_binaries.sh
-
+./scripts/copy_grafana_files.sh
+cp -r $GOPATH/src/devstats/util_sql/ .
+mkdir -p ./metrics
+cp -r $GOPATH/src/devstats/metrics/shared ./metrics
+cp -r $GOPATH/src/devstats/metrics/knative ./metrics
+cp -r $GOPATH/src/devstats/hide .
+cp -r $GOPATH/src/devstats/git .
+cp -r $GOPATH/src/devstats/knative .
+cp -r $GOPATH/src/devstats/shared .
+cp $GOPATH/src/devstats/github_users.json .
+cp $GOPATH/src/devstats/scripts/repo_groups.sql ./scripts
+cp $GOPATH/src/devstats/scripts/clean_affiliations.sql ./scripts
+mkdir -p ./scripts/knative
+cp $GOPATH/src/devstats/scripts/repo_groups.sql ./scripts/knative
 rm -rf /etc/gha2db && ln -sf /mount/data/src/test-infra/devstats /etc/gha2db
