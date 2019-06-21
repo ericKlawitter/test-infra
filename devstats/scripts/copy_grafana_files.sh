@@ -7,5 +7,3 @@ do
   cp $GOPATH/src/devstats/grafana/dashboards/knative/$f ./grafana/dashboards/knative || exit 1
 done
 echo "Dashboards copied."
-mv $GOPATH/src/devstats/grafana/img ./grafana
-mv $GOPATH/src/devstats/grafana/knative ./grafana
